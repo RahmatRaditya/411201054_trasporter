@@ -33,6 +33,10 @@ Route::group([
     Route::post('createLokasi', 'LokasiController@createLokasi');
     Route::post('updateLokasi', 'LokasiController@updateLokasi');
     Route::get('deleteLokasi/{id}', 'LokasiController@deleteLokasi');
+    Route::get('getPengiriman', 'PengirimanController@getPengiriman');
+    Route::post('createPengiriman', 'PengirimanController@createPengiriman');
+    Route::post('updatePengiriman', 'PengirimanController@updatePengiriman');
+    Route::get('deletePengiriman/{id}', 'PengirimanController@deletePengiriman');
 });
 
 Route::post('login', 'AuthController@login');
