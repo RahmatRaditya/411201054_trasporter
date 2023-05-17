@@ -15,6 +15,7 @@ class Pengiriman extends Model
         'barang_id',
         'jumlah_barang',
         'harga_barang',
-        'kurir_id'
+        'kurir_id',
+        'is_approved'
     ];
 }

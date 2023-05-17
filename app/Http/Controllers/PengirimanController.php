@@ -25,6 +25,7 @@ class PengirimanController extends Controller
         $pengiriman->jumlah_barang = $request->jumlah_barang;
         $pengiriman->harga_barang = $request->harga_barang;
         $pengiriman->kurir_id = $request->kurir_id;
+        $pengiriman->is_approved = $request->is_approved;
         $pengiriman->save();
 
         return Helper::toJson($pengiriman, "Data pengiriman sudah ditambah");
@@ -42,6 +43,7 @@ class PengirimanController extends Controller
         $pengiriman->jumlah_barang = $request->jumlah_barang;
         $pengiriman->harga_barang = $request->harga_barang;
         $pengiriman->kurir_id = $request->kurir_id;
+        $pengiriman->is_approved = $request->is_approved;
         $pengiriman->save();
 
         return Helper::toJson($pengiriman, "Data pengiriman sudah diubah");
