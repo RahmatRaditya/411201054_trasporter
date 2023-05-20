@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 17 Bulan Mei 2023 pada 16.18
+-- Waktu pembuatan: 20 Bulan Mei 2023 pada 05.16
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.2.0
 
@@ -156,9 +156,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Rahmat Raditya', '411201054@mahasiswa.undira.ac.id', NULL, '$2y$10$N7bpJeT.kAtdIc2PUoA5gON8z83E7sJuTy9Gak5Z5o5/lv9o/4zeW', NULL, '2023-05-15 06:45:30', '2023-05-15 06:45:30'),
-(2, 'kurir1', 'kurir1@mail.com', NULL, '123456', NULL, NULL, NULL),
-(3, 'kurir2', 'kurir2@mail.com', NULL, '123456', NULL, NULL, NULL),
-(4, 'Rahmat Raditya', 'rahmat@mail.com', NULL, '$2y$10$0wqEAcRnfpiPhzwd0ncF/uAe/0NgToQ18ctC1ElGT.bcConJ5Xis2', NULL, '2023-05-17 06:45:23', '2023-05-17 06:45:23');
+(4, 'Rahmat Raditya', 'rahmat@mail.com', NULL, '$2y$10$0wqEAcRnfpiPhzwd0ncF/uAe/0NgToQ18ctC1ElGT.bcConJ5Xis2', NULL, '2023-05-17 06:45:23', '2023-05-17 06:45:23'),
+(5, 'Kurir1', 'kurir1@mail.com', NULL, '$2y$10$CSPiEO.15erFcvHM21dyAOP2zLzqC4a43RFHuMK90FyNtoc/.Hptu', NULL, '2023-05-19 20:16:14', '2023-05-19 20:16:14'),
+(6, 'Kurir2', 'kurir2@mail.com', NULL, '$2y$10$pouLIFUXCDIYVAU.w621oeiMnJKQgG9c.wF7J7vuMnRm3vX.TlTVe', NULL, '2023-05-19 20:16:26', '2023-05-19 20:16:26');
 
 --
 -- Indexes for dumped tables
@@ -233,7 +233,7 @@ ALTER TABLE `pengiriman`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
