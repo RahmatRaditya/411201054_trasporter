@@ -40,6 +40,10 @@ Route::group([
     Route::post('updatePengiriman', 'PengirimanController@updatePengiriman');
     Route::get('deletePengiriman/{id}', 'PengirimanController@deletePengiriman');
     Route::post('approvePengiriman', 'PengirimanController@approvePengiriman');
+    Route::get('getKurir', 'UserController@getKurir');
+    Route::post('createKurir', 'UserController@createKurir');
+    Route::post('updateKurir', 'UserController@updateKurir');
+    Route::get('deleteKurir/{id}', 'UserController@deleteKurir');
 });
 
 Route::post('users', 'UserController@store');
