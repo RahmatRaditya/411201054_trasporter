@@ -50,6 +50,17 @@ class PengirimanController extends Controller
 
     }
 
+    public function approvePengiriman(Request $request)
+    {
+
+        $pengiriman = Pengiriman::where("id", $request->id)->first();
+        $pengiriman->is_approved = $request->is_approved;
+        $pengiriman->save();
+
+        return Helper::toJson($pengiriman, "Pengiriman sudah di approve");
+
+    }
+
     public function deletePengiriman($id)
     {
 

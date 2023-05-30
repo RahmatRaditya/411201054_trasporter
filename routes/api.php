@@ -16,6 +16,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('login', 'AuthController@login');
+
 
 Route::group([
 
@@ -37,8 +39,8 @@ Route::group([
     Route::post('createPengiriman', 'PengirimanController@createPengiriman');
     Route::post('updatePengiriman', 'PengirimanController@updatePengiriman');
     Route::get('deletePengiriman/{id}', 'PengirimanController@deletePengiriman');
+    Route::post('approvePengiriman', 'PengirimanController@approvePengiriman');
 });
 
-Route::post('login', 'AuthController@login');
 Route::post('users', 'UserController@store');
 Route::get('users', 'UserController@index');
