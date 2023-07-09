@@ -3,11 +3,94 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\Helper;
+use App\ViewPengiriman;
 use Illuminate\Http\Request;
 use App\Pengiriman;
+use App\User;
+use App\Barang;
+use App\Lokasi;
 
 class PengirimanController extends Controller
 {
+    public function index()
+    {
+        $pengiriman = ViewPengiriman::all();
+        return view('pengiriman_list', ['pengiriman' => $pengiriman]);
+    }
+
+    public function create()
+    {
+        $users = User::all();
+        $barang = Barang::all();
+        $lokasi = Lokasi::all();
+        return view('pengiriman_form', compact('users', 'barang', 'lokasi'));
+    }
+
+    public function store(Request $request)
+    {
+
+        $validatedData = $request->validate([
+            'no_pengiriman' => 'required',
+            'tanggal' => 'required',
+            'lokasi_id' => 'required',
+            'barang_id' => 'required',
+            'jumlah_barang' => 'required',
+            'harga_barang' => 'required',
+            'kurir_id' => 'required',
+        ]);
+
+        Pengiriman::create([
+            'no_pengiriman' => e($request->input('nomor_pengiriman')),
+            'tanggal' => e($request->input('tanggal')),
+            'lokasi_id' => e($request->input('lokasi_id')),
+            'barang_id' => e($request->input('barang_id')),
+            'jumlah_barang' => e($request->input('jumlah_barang')),
+            'harga_barang' => e($request->input('harga_barang')),
+            'kurir_id' => e($request->input('kurir_id')),
+            'is_approved' => e($request->input('is_approved')),
+        ]);
+        return redirect()->route('pengiriman.index');
+    }
+
+    public function edit($id)
+    {
+        $pengiriman = Pengiriman::find($id);
+        $users = User::all();
+        $barang = Barang::all();
+        $lokasi = Lokasi::all();
+        return view('pengiriman_edit', compact('pengiriman', 'users', 'barang', 'lokasi'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'no_pengiriman' => 'required',
+            'tanggal' => 'required',
+            'lokasi_id' => 'required',
+            'barang_id' => 'required',
+            'jumlah_barang' => 'required',
+            'harga_barang' => 'required',
+            'kurir_id' => 'required',
+        ]);
+
+        $pengiriman = Pengiriman::find($id);
+        $pengiriman->no_pengiriman = e($request->input('no_pengiriman'));
+        $pengiriman->tanggal = e($request->input('tanggal'));
+        $pengiriman->lokasi_id = e($request->input('lokasi_id'));
+        $pengiriman->barang_id = e($request->input('barang_id'));
+        $pengiriman->jumlah_barang = e($request->input('jumlah_barang'));
+        $pengiriman->harga_barang = e($request->input('harga_barang'));
+        $pengiriman->kurir_id = e($request->input('kurir_id'));
+        $pengiriman->save();
+
+        return redirect()->route('pengiriman.index');
+    }
+
+
+
+
+    //=================================================
+    //Rest API
     public function getPengiriman()
     {
         $pengiriman = Pengiriman::orderBy("id", "desc")->get();
