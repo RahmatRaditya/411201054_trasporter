@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/pengiriman', 'PengirimanController@index')->name('pengiriman');
+Route::get('/barang', 'BarangController@index')->name('barang');
+Route::get('/lokasi', 'LokasiController@index')->name('lokasi');
+Route::get('/kurir', 'KurirController@index')->name('kurir');
