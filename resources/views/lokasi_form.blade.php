@@ -5,7 +5,7 @@
         <div class="col-lg-8">
             <div class="card">
                 <div class="card-header">
-                    <h3>Buat Pengiriman Baru</h3>
+                    <h3>Tambah Lokasi</h3>
                 </div>
 
                 <div class="card-body">

@@ -112,7 +112,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('barang.index') }}" class="nav-link">
                     <i class="fas fa-cube" style="width: 32px"></i>
                       <p>Barang</p>
                     </a>
