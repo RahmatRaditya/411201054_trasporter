@@ -9,17 +9,9 @@ use App\User;
 
 class UserController extends Controller
 {
-    // public function store(Request $request)
-    // {
-    //     $userData = $request->all();
-    //     $user = User::create($userData);
-
-    //     return $user;
-    // }
-
     public function index()
     {
-        $user = User::all();
+        $user = User::orderBy('created_at', 'desc')->get();
         return view('kurir_list', ['user' => $user]);
     }
 

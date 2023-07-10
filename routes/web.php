@@ -25,6 +25,7 @@ Route::get('pengiriman/create', 'PengirimanController@create')->name('pengiriman
 Route::post('pengiriman/store', 'PengirimanController@store')->name('pengiriman.store');
 Route::get('pengiriman/edit/{id}', 'PengirimanController@edit')->name('pengiriman.edit');
 Route::put('pengiriman/update/{id}', 'PengirimanController@update')->name('pengiriman.update');
+Route::patch('pengiriman/approve/{id}', 'PengirimanController@approve')->name('pengiriman.approve');
 
 Route::get('barang', 'BarangController@index')->name('barang.index');
 Route::get('barang/create', 'BarangController@create')->name('barang.create');

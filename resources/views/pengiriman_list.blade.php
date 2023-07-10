@@ -38,6 +38,7 @@
                               <th scope="col">Qty</th>
                               <th scope="col">Harga</th>
                               <th scope="col">Kurir</th>
+                              <th scope="col">Approval</th>
                               <th scope="col">Edit</th>
                               </tr>
                           </thead>
@@ -52,6 +53,16 @@
                                   <td>{{ $p->jumlah_barang }}</td>
                                   <td>{{ $p->harga_barang }}</td>
                                   <td>{{ $p->nama_pengirim }}</td>
+                                  <td>
+                                      @if ($p->status == 0)
+                                          <form action="{{ route('pengiriman.approve', $p->id) }}" method="POST">
+                                              @csrf
+                                              @method('PATCH')
+                                              <input type="hidden" name="status" value="1">
+                                              <button type="submit" class="btn btn-outline-success"><i class="fas fa-check-circle"></i></button>
+                                          </form>
+                                      @endif
+                                  </td>
                                   <td>
                                       <a href="{{ route('pengiriman.edit', $p->id) }}">
                                           <button type="button" class="btn btn-info"><i class="fas fa-edit"></i></button>

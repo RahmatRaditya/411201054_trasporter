@@ -15,7 +15,7 @@ class PengirimanController extends Controller
 {
     public function index()
     {
-        $pengiriman = ViewPengiriman::all();
+        $pengiriman = ViewPengiriman::orderBy('created_at', 'desc')->get();
         return view('pengiriman_list', ['pengiriman' => $pengiriman]);
     }
 
@@ -75,6 +75,15 @@ class PengirimanController extends Controller
         $pengiriman->jumlah_barang = e($request->input('jumlah_barang'));
         $pengiriman->harga_barang = e($request->input('harga_barang'));
         $pengiriman->kurir_id = e($request->input('kurir_id'));
+        $pengiriman->save();
+
+        return redirect()->route('pengiriman.index');
+    }
+
+    public function approve(Request $request, $id)
+    {
+        $pengiriman = ViewPengiriman::find($id);
+        $pengiriman->status = e($request->input('status'));
         $pengiriman->save();
 
         return redirect()->route('pengiriman.index');

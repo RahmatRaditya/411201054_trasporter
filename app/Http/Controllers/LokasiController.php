@@ -10,7 +10,7 @@ class LokasiController extends Controller
 {
     public function index()
     {
-        $lokasi = Lokasi::all();
+        $lokasi = Lokasi::orderBy('created_at', 'desc')->get();
         return view('lokasi_list', ['lokasi' => $lokasi]);
     }
 
