@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-body mt-5 mb-5">
                     <div class="row">
-                        <div class="col">
+                        <div class="col pl-5">
                             <div class="row mb-3">
                                 <h1 class="ml-4 font-weight-bold">Login</h1>
                             </div>
