@@ -13,7 +13,7 @@
                             </div>
 
                             <div class="row mb-3">
-                                <img src="{{ asset('images/ilustration.png') }}" alt="Image" style="max-width: 300px;">
+                                <img src="{{ asset('images/ilustration.png') }}" alt="Image" style="max-width: 400px;">
                             </div>
                         </div>
 

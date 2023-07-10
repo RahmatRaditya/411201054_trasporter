@@ -124,7 +124,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('user.index') }}" class="nav-link">
                     <i class="fas fa-users" style="width: 32px"></i>
                       <p>Kurir</p>
                     </a>

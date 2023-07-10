@@ -9,29 +9,80 @@ use App\User;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // public function store(Request $request)
+    // {
+    //     $userData = $request->all();
+    //     $user = User::create($userData);
+
+    //     return $user;
+    // }
+
     public function index()
     {
-        $users = User::all();
-
-        return $users;
+        $user = User::all();
+        return view('kurir_list', ['user' => $user]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     */
+    public function create()
+    {
+        return view('kurir_form');
+    }
+
     public function store(Request $request)
     {
-        $userData = $request->all();
-        $user = User::create($userData);
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
 
-        return $user;
+        User::create([
+            'name' => e($request->input('name')),
+            'email' => e($request->input('email')),
+            'password' => e($request->input('password')),
+        ]);
+        return redirect()->route('user.index');
     }
+
+    public function show($id)
+    {
+        //
+    }
+
+    public function edit($id)
+    {
+        $user = User::find($id);
+        return view('kurir_edit', ['user' => $user]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        $user = User::find($id);
+        $user->name = e($request->input('name'));
+        $user->email = e($request->input('email'));
+        $user->password = e($request->input('password'));
+        $user->save();
+
+        return redirect()->route('user.index');
+    }
+
+    public function destroy($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('user.index');
+    }
+
+
+
+    //=================================================
+    //Rest API
 
     public function getKurir()
     {

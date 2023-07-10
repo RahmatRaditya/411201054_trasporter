@@ -16,12 +16,6 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-// Route::resource('/home', 'DashboardController');
-// Route::resource('/dashboard', 'DashboardController');
-// Route::resource('/pengiriman', 'PengirimanController');
-// Route::resource('/barang', 'BarangController');
-// Route::resource('/lokasi', 'LokasiController');
-// Route::resource('/kurir', 'KurirController');
 
 Route::get('home', 'DashboardController@index')->name('home.index');
 Route::get('dashboard', 'DashboardController@index')->name('dashboard.index');
@@ -46,9 +40,9 @@ Route::get('lokasi/edit/{id}', 'LokasiController@edit')->name('lokasi.edit');
 Route::put('lokasi/update/{id}', 'LokasiController@update')->name('lokasi.update');
 Route::delete('lokasi/destroy/{id}', 'LokasiController@destroy')->name('lokasi.destroy');
 
-Route::get('user', 'UserController@index')->name('user');
-
-// Route::group(['middleware' => 'auth'], function () {
-//     // Route::resource('/', DashboardController::class);
-//     Route::resource('pengiriman', PengirimanController);
-// });
+Route::get('user', 'UserController@index')->name('user.index');
+Route::get('user/create', 'UserController@create')->name('user.create');
+Route::post('user/store', 'UserController@store')->name('user.store');
+Route::get('user/edit/{id}', 'UserController@edit')->name('user.edit');
+Route::put('user/update/{id}', 'UserController@update')->name('user.update');
+Route::delete('user/destroy/{id}', 'UserController@destroy')->name('user.destroy');
