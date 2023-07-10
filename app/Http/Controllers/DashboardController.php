@@ -27,9 +27,9 @@ class DashboardController extends Controller
             select('nama_lokasi', DB::raw("count(id) as total"))->
             groupBy('id_lokasi')->get();
 
-        //get data visit/transaksi dan jumlah count
-        $allVisit = ViewPengiriman::whereDate('tanggal', '>', $threeMonth);
-        $countVisit = $allVisit->count();
+        //get data pengiriman dan jumlah
+        $allPengiriman = ViewPengiriman::whereDate('tanggal', '>', $threeMonth);
+        $countPengiriman = $allPengiriman->count();
 
         $trendLokasi = DB::table('view_pengiriman')->whereDate('tanggal', '>', $oneYearAgo)->
             select('nama_lokasi', DB::raw("count(id) as total"))->
@@ -37,33 +37,24 @@ class DashboardController extends Controller
             groupBy('id_lokasi')->get();
 
         $trendBarang = DB::table('view_pengiriman')->whereDate('tanggal', '>', $oneYearAgo)->
-            select('nama_barang', DB::raw("count(id) as total"))->
+            select('nama_barang', DB::raw("sum(jumlah_barang) as total"))->
             orderBy('total', 'desc')->
             groupBy('id_barang')->get();
 
-        //get data sales dan jumlah count
-        $allSales = User::all();
-        $countSales = $allSales->count();
+        //get data kurir dan jumlah
+        $allKurir = User::all();
+        $countKurir = $allKurir->count();
 
-        //get data outlet dan jumlah count
-        $allOutlet = Lokasi::all();
-        $countOutlet = $allOutlet->count();
+        //get data lokasi dan jumlah
+        $allLokasi = Lokasi::all();
+        $countLokasi = $allLokasi->count();
 
 
-        //get data barang dan jumlah count
+        //get data barang dan jumlah
         $allBarang = Barang::all();
         $countBarang = $allBarang->count();
 
-
-
-        // if(Auth::user()->level == 1){
-        //     return view('dashboard.index', compact('listBarang','listOutlet','countVisit','countOutlet','countSales','countBarang'));
-
-        // } else {
-        //     return redirect('transaksi');
-        // }
-
-        return view('dashboard', compact('listBarang', 'listLokasi', 'countVisit', 'trendLokasi', 'countSales', 'trendBarang'));
+        return view('dashboard', compact('listBarang', 'listLokasi', 'countPengiriman', 'trendLokasi', 'countKurir', 'trendBarang'));
 
     }
 }

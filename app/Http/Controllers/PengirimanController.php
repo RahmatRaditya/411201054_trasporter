@@ -30,24 +30,20 @@ class PengirimanController extends Controller
     {
 
         $validatedData = $request->validate([
-            'no_pengiriman' => 'required',
+            'no_pengiriman' => 'required|unique:pengiriman,no_pengiriman',
             'tanggal' => 'required',
             'lokasi_id' => 'required',
             'barang_id' => 'required',
-            'jumlah_barang' => 'required',
-            'harga_barang' => 'required',
-            'kurir_id' => 'required',
         ]);
 
         Pengiriman::create([
-            'no_pengiriman' => e($request->input('nomor_pengiriman')),
+            'no_pengiriman' => e($request->input('no_pengiriman')),
             'tanggal' => e($request->input('tanggal')),
             'lokasi_id' => e($request->input('lokasi_id')),
             'barang_id' => e($request->input('barang_id')),
             'jumlah_barang' => e($request->input('jumlah_barang')),
             'harga_barang' => e($request->input('harga_barang')),
             'kurir_id' => e($request->input('kurir_id')),
-            'is_approved' => e($request->input('is_approved')),
         ]);
         return redirect()->route('pengiriman.index');
     }
@@ -64,13 +60,10 @@ class PengirimanController extends Controller
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'no_pengiriman' => 'required',
+            'no_pengiriman' => 'required|unique:pengiriman,no_pengiriman',
             'tanggal' => 'required',
             'lokasi_id' => 'required',
             'barang_id' => 'required',
-            'jumlah_barang' => 'required',
-            'harga_barang' => 'required',
-            'kurir_id' => 'required',
         ]);
 
         $pengiriman = Pengiriman::find($id);

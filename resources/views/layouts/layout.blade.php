@@ -59,7 +59,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <aside class="main-sidebar sidebar-light elevation-4">
         <!-- Brand Logo -->
         <a href="#" class="brand-link">
-          <span class="brand-text font-weight-bold">PETIR Express</span>
+          <span class="brand-text font-weight-bold text-primary">PETIR<i class="fas fa-bolt text-danger"></i>Express</span>
         </a>
 
         <!-- Sidebar -->

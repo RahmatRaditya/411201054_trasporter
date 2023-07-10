@@ -25,7 +25,7 @@
     <div class="row justify-content-center">
         <div class="col">
             <div class="card">
-                <div class="card-body">
+              <div class="card-body">
                 <div class="justify-content-center align-items-center">
                       <table class="table">
                           <thead class="thead-light">

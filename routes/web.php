@@ -29,7 +29,7 @@ Route::get('pengiriman', 'PengirimanController@index')->name('pengiriman.index')
 Route::get('pengiriman/create', 'PengirimanController@create')->name('pengiriman.create');
 Route::post('pengiriman/store', 'PengirimanController@store')->name('pengiriman.store');
 Route::get('pengiriman/edit/{id}', 'PengirimanController@edit')->name('pengiriman.edit');
-Route::patch('pengiriman/update/{id}', 'PengirimanController@update')->name('pengiriman.update');
+Route::put('pengiriman/update/{id}', 'PengirimanController@update')->name('pengiriman.update');
 Route::get('barang', 'BarangController@index')->name('barang');
 Route::get('lokasi', 'LokasiController@index')->name('lokasi');
 Route::get('user', 'UserController@index')->name('user');

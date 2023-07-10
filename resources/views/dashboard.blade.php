@@ -1,20 +1,19 @@
 @extends('layouts.layout')
 @section('content')
-
     <div class="container-fluid mt-3">
         <div class="row">
             <div class="col-lg-3 col-6">
               <!-- small box -->
               <div class="small-box bg-primary">
                 <div class="inner">
-                  <p>3 Bulan Terakhir</p>
                   <p>Total Pengiriman</p>
-                  <h3>{{ $countVisit }}</h3>
+                  <p class="font-weight-bold">3 Bulan Terakhir</p>
+                  <h3>{{ $countPengiriman }}</h3>
                 </div>
                 <div class="icon">
                   <i class="ion ion-bag"></i>
                 </div>
-                <a href="{{ url('pengiriman') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ url('pengiriman') }}" class="small-box-footer">Lihat Semua <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -24,13 +23,13 @@
               <div class="small-box bg-success">
                 <div class="inner">
                   <p>Lokasi Terbanyak</p>
-                  <p>{{ $trendLokasi[0]->nama_lokasi }} </p>
+                  <p class="font-weight-bold">{{ $trendLokasi[0]->nama_lokasi }} </p>
                   <h3>{{ $trendLokasi[0]->total }}<sup style="font-size: 20px"></sup></h3>
                 </div>
                 <div class="icon">
                   <i class="ion ion-stats-bars"></i>
                 </div>
-                <a href="" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="" class="small-box-footer">Lihat Semua <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -39,14 +38,14 @@
               <!-- small box -->
               <div class="small-box bg-secondary">
                 <div class="inner">
-                  <p>Total Sales</p>
-                  <p>Keseluruhan</p>
-                  <h3>{{ $countSales }}</h3>
+                  <p>Total Kurir</p>
+                  <p>.</p>
+                  <h3>{{ $countKurir }}</h3>
                 </div>
                 <div class="icon">
                   <i class="ion ion-person-add"></i>
                 </div>
-                <a href="" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="" class="small-box-footer">Lihat Semua <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -56,13 +55,13 @@
               <div class="small-box bg-info">
                 <div class="inner">
                   <p>Barang Terbanyak</p>
-                  <p>{{ $trendBarang[0]->nama_barang }} </p>
+                  <p class="font-weight-bold">{{ $trendBarang[0]->nama_barang }} </p>
                   <h3>{{ $trendBarang[0]->total }}<sup style="font-size: 20px"></sup></h3>
                 </div>
                 <div class="icon">
                   <i class="ion ion-pie-graph"></i>
                 </div>
-                <a href="" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="" class="small-box-footer">Lihat Semua <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -103,10 +102,10 @@
                 },
 
                 title: {
-                    text: 'Persentase Data Barang'
+                    text: 'Grafik Barang'
                 },
                 tooltip: {
-                    pointFormat: '{series.nama_barang}:<b>{point.percentage:.0f}%</b> <br> Count:<b>{series.total}</b>',
+                    pointFormat: '{series.nama_barang}<b>{point.percentage:.0f}%</b></b>',
                     percentageDecimals: 2
                 },
                 series: [{
@@ -135,10 +134,10 @@
                 },
 
                 title: {
-                    text: 'Persentase Lokasi'
+                    text: 'Grafik Lokasi'
                 },
                 tooltip: {
-                    pointFormat: '{series.nama_lokasi}:<b>{point.percentage:.0f}%</b> <br> Count:<b>{series.total}</b>',
+                    pointFormat: '{series.nama_lokasi}<b>{point.percentage:.0f}%</b>',
                     percentageDecimals: 3
                 },
 
