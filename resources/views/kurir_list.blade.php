@@ -12,7 +12,7 @@
               </div>
               <!-- /.col -->
               <div class="col-sm-6 d-flex justify-content-end">
-              <a href="{{ route('user.create') }}"><button class="btn btn-primary align"><i class="fas fa-plus"></i>&nbsp&nbspTambah Barang</button></a>
+              <a href="{{ route('user.create') }}"><button class="btn btn-primary align"><i class="fas fa-plus"></i>&nbsp&nbspTambah Kurir</button></a>
               </div>
               <!-- /.col -->
             </div>
