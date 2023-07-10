@@ -36,7 +36,6 @@
                               <th scope="col">Barang</th>
                               <th scope="col">Lokasi</th>
                               <th scope="col">Qty</th>
-                              <th scope="col">Harga</th>
                               <th scope="col">Kurir</th>
                               <th scope="col">Approval</th>
                               <th scope="col">Edit</th>
@@ -51,7 +50,6 @@
                                   <td>{{ $p->nama_barang }}</td>
                                   <td>{{ $p->nama_lokasi }}</td>
                                   <td>{{ $p->jumlah_barang }}</td>
-                                  <td>{{ $p->harga_barang }}</td>
                                   <td>{{ $p->nama_pengirim }}</td>
                                   <td>
                                       @if ($p->status == 0)

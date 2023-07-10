@@ -49,14 +49,6 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="harga_barang">Harga Barang</label>
-                                <input type="number" name="harga_barang" value="{{ old('harga_barang') }}" class="form-control" id="harga_barang" placeholder="0">
-                                @error('harga_barang')
-                                    <div class="text-danger">{{ $message }}</div>
-                                @enderror
-                        </div>
-
-                        <div class="form-group">
                                 <label for="kurir_id">Kurir</label>
                                 <select class="form-control" id="kurir_id" name="kurir_id">
                                 <option value="">-- Pilih Kurir --</option>

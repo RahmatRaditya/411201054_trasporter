@@ -43,7 +43,6 @@ class PengirimanController extends Controller
             'lokasi_id' => e($request->input('lokasi_id')),
             'barang_id' => e($request->input('barang_id')),
             'jumlah_barang' => e($request->input('jumlah_barang')),
-            'harga_barang' => e($request->input('harga_barang')),
             'kurir_id' => e($request->input('kurir_id')),
         ]);
         return redirect()->route('pengiriman.index');
@@ -73,7 +72,6 @@ class PengirimanController extends Controller
         $pengiriman->lokasi_id = e($request->input('lokasi_id'));
         $pengiriman->barang_id = e($request->input('barang_id'));
         $pengiriman->jumlah_barang = e($request->input('jumlah_barang'));
-        $pengiriman->harga_barang = e($request->input('harga_barang'));
         $pengiriman->kurir_id = e($request->input('kurir_id'));
         $pengiriman->save();
 
