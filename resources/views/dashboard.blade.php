@@ -29,7 +29,7 @@
                 <div class="icon">
                   <i class="ion ion-stats-bars"></i>
                 </div>
-                <a href="" class="small-box-footer">Lihat Semua <i class="fas fa-arrow-right"></i></a>
+                <a href="{{ url('lokasi') }}" class="small-box-footer">Lihat Semua <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -45,7 +45,7 @@
                 <div class="icon">
                   <i class="ion ion-person-add"></i>
                 </div>
-                <a href="" class="small-box-footer">Lihat Semua <i class="fas fa-arrow-right"></i></a>
+                <a href="{{ url('user') }}" class="small-box-footer">Lihat Semua <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
@@ -61,7 +61,7 @@
                 <div class="icon">
                   <i class="ion ion-pie-graph"></i>
                 </div>
-                <a href="" class="small-box-footer">Lihat Semua <i class="fas fa-arrow-right"></i></a>
+                <a href="{{ url('barang') }}" class="small-box-footer">Lihat Semua <i class="fas fa-arrow-right"></i></a>
               </div>
             </div>
             <!-- ./col -->

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\Helper;
+use App\Rules\MaxUsagePerDay;
 use App\ViewPengiriman;
 use Illuminate\Http\Request;
 use App\Pengiriman;
@@ -32,7 +33,7 @@ class PengirimanController extends Controller
         $validatedData = $request->validate([
             'no_pengiriman' => 'required|unique:pengiriman,no_pengiriman',
             'tanggal' => 'required',
-            'lokasi_id' => 'required',
+            'lokasi_id' => ['required', new MaxUsagePerDay(5)],
             'barang_id' => 'required',
         ]);
 
@@ -60,7 +61,7 @@ class PengirimanController extends Controller
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'no_pengiriman' => 'required|unique:pengiriman,no_pengiriman',
+            'no_pengiriman' => 'required',
             'tanggal' => 'required',
             'lokasi_id' => 'required',
             'barang_id' => 'required',
