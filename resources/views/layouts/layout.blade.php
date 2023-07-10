@@ -118,7 +118,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('lokasi.index') }}" class="nav-link">
                     <i class="fas fa-map-marker-alt" style="width: 32px"></i>
                       <p>Lokasi</p>
                     </a>

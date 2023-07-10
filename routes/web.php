@@ -31,7 +31,12 @@ Route::post('pengiriman/store', 'PengirimanController@store')->name('pengiriman.
 Route::get('pengiriman/edit/{id}', 'PengirimanController@edit')->name('pengiriman.edit');
 Route::put('pengiriman/update/{id}', 'PengirimanController@update')->name('pengiriman.update');
 Route::get('barang', 'BarangController@index')->name('barang');
-Route::get('lokasi', 'LokasiController@index')->name('lokasi');
+Route::get('lokasi', 'LokasiController@index')->name('lokasi.index');
+Route::get('lokasi/create', 'LokasiController@create')->name('lokasi.create');
+Route::post('lokasi/store', 'LokasiController@store')->name('lokasi.store');
+Route::get('lokasi/edit/{id}', 'LokasiController@edit')->name('lokasi.edit');
+Route::put('lokasi/update/{id}', 'LokasiController@update')->name('lokasi.update');
+Route::delete('lokasi/destroy/{id}', 'LokasiController@destroy')->name('lokasi.destroy');
 Route::get('user', 'UserController@index')->name('user');
 
 // Route::group(['middleware' => 'auth'], function () {
