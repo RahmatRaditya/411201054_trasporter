@@ -59,8 +59,10 @@
                                               @csrf
                                               @method('PATCH')
                                               <input type="hidden" name="status" value="1">
-                                              <button type="submit" class="btn btn-outline-success"><i class="fas fa-check-circle"></i></button>
+                                              <button type="submit" class="btn btn-outline-success" onclick="return confirm('Yakin approve data ini?')"><i class="fas fa-check-circle"></i></button>
                                           </form>
+                                        @else 
+                                            <p class="badge text-success">Approved</p>
                                       @endif
                                   </td>
                                   <td>
